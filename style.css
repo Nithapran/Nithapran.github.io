@@ -1,0 +1,383 @@
+/* Theme colors */
+:root {
+  --black: rgb(0, 0, 0);
+  --blue: rgb(103, 220, 255);
+  --red: rgb(255, 0, 0);
+}
+
+.footer {
+  position: fixed;
+  width: 100%;
+  left: 0;
+  bottom: 0;
+  color: rgb(255, 255, 255);
+  text-align: center;
+  background-color: rgb(0, 0, 0);
+}
+
+.contact-info {
+  padding: 10;
+  border-radius: 5px;
+  background-color: rgb(255, 255, 255, 0.1);
+}
+
+.contact-info > .child {
+  color: rgb(255, 255, 255);
+}
+
+.row {
+  margin: 0 auto;
+  grid-row: 2;
+}
+
+.a {
+  color: white;
+}
+
+.social-media {
+  background-color: rgb(255, 255, 255);
+}
+
+.btn-outline-danger.custom-btn {
+  background-color: rgb(0, 0, 0);
+  border-color: rgb(255, 255, 255);
+}
+
+.max-width {
+  max-width: 1000px;
+  /* padding: 0 80px; */
+  margin: 150px;
+}
+
+#home {
+  width: 100%;
+  height: 600px;
+
+  background-size: 100% auto;
+  object-fit: cover;
+}
+
+#home-content {
+  color: white;
+  margin-left: 50px;
+  position: absolute;
+  top: 50%;
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
+}
+
+body {
+  font-family: "Audiowide", sans-serif;
+}
+
+.project-summary {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  background-repeat: no-repeat;
+  filter: grayscale(100%);
+}
+
+#project-summary h1,
+p {
+  padding-left: 14px;
+  color: white;
+}
+
+#project-summary img {
+  width: 200px;
+  height: 64px;
+}
+
+#project-summary button {
+  background-color: rgba(0, 0, 0, 0);
+  border: 0ch;
+  margin-bottom: auto;
+}
+
+#screenshots {
+  background-color: black;
+  width: 100%;
+  height: 600px;
+}
+
+#screenshots.scrollmenu {
+  background-color: rgb(0, 0, 0);
+  overflow: auto;
+  white-space: nowrap;
+}
+
+#screenshots .screenshot {
+  width: 202px;
+  height: 450px;
+  margin: 14px;
+  object-fit: cover;
+  border: 1px solid rgb(255, 255, 255);
+  border-radius: 10px;
+}
+#screenshots h1 {
+  color: rgb(255, 255, 255);
+  margin: 14px;
+}
+
+#role {
+  background-color: black;
+  width: 100%;
+  height: 100px;
+}
+
+#role h1 {
+  color: rgb(255, 255, 255);
+  padding: 14px;
+}
+
+#responsibilities {
+  background-color: black;
+  width: 100%;
+  height: auto;
+}
+
+#responsibilities h1,
+ol {
+  color: rgb(255, 255, 255);
+  padding: 14px;
+}
+
+#responsibilities ol {
+  margin-left: 14px;
+}
+
+#documentation {
+  background-color: black;
+  width: 100%;
+  height: auto;
+}
+
+#documentation h1,
+ol {
+  color: rgb(255, 255, 255);
+  padding: 14px;
+}
+
+#design-scheme {
+  background-color: black;
+  width: 100%;
+  height: 600px;
+}
+
+#design-scheme h1 {
+  color: rgb(255, 255, 255);
+  padding: 14px;
+}
+
+#design-scheme h3 {
+  color: rgb(255, 255, 255);
+  padding: 14px;
+}
+
+#design-scheme #pallete-image {
+  width: 600px;
+  height: 100px;
+  margin: 14px;
+  object-fit: cover;
+  border: 1px solid rgb(255, 255, 255);
+  border-radius: 10px;
+}
+
+#design-scheme p {
+  color: black;
+  width: max-content;
+  background-color: beige;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  padding-left: 10px;
+  padding-right: 10px;
+  border-radius: 5px;
+}
+
+/* #introduction {
+   border: 2px solid black;
+  padding: 25px;
+  background: url(images/about-bg2.png);
+  background-repeat: no-repeat;
+  background-size: auto;
+  } */
+#introduction {
+  width: 100%;
+  height: 600px;
+
+  background-size: 100% auto;
+  object-fit: cover;
+}
+
+#introduction h1,
+p {
+  padding: 14px;
+  color: rgb(255, 255, 255);
+}
+
+#introduction p {
+  width: 50%;
+}
+
+.center-vertically {
+  margin: 0;
+  position: absolute;
+  top: 50%;
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
+}
+
+#work-history h3 {
+  margin-left: 14px;
+  margin-right: 14px;
+  color: rgb(255, 255, 255);
+  width: 15%;
+}
+
+#work-edu-history-container {
+  margin-left: 10px;
+  margin-right: 10px;
+  margin-bottom: 10px;
+  background-color: #3f3f3f;
+  border-radius: 15px;
+  width: 80%;
+}
+
+#work-edu-history-job-title {
+  margin-left: 20px;
+  margin-top: 20px;
+  color: white;
+}
+
+#work-edu-history-job-summary {
+  margin-left: 20px;
+  margin-right: 20px;
+  margin-bottom: 20px;
+  color: rgb(159, 159, 159);
+  word-wrap: break-word;
+}
+
+#work-edu-history-container #work-edu-history-firm {
+  margin-left: 20px;
+  color: rgb(255, 0, 0);
+}
+
+#work-edu-history-container #seperator {
+  color: rgb(255, 255, 255);
+}
+
+#work-edu-history-container #period {
+  color: rgb(103, 220, 255);
+}
+
+#contact-form-container {
+  background-color: rgba(172, 172, 172, 0.5);
+  border-radius: 30px;
+  border-width: 1px;
+  border-color: rgb(255, 255, 255);
+  padding: 10px;
+  width: 50%;
+}
+
+#contact-form {
+  width: 100%;
+  height: 430px;
+
+  background-size: 100% auto;
+  object-fit: cover;
+  background-repeat: no-repeat;
+}
+
+#landing-header {
+  width: 100%;
+  height: auto;
+}
+
+#landing-header img {
+  height: 500px;
+  width: auto;
+}
+
+#landing-header #div2 {
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  width: 50%;
+}
+
+#landing-header h1 {
+  color: white;
+}
+
+#landing-header h1:nth-of-type(4) {
+  color: var(--red);
+}
+
+#landing-header-content #div1 {
+  width: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: auto;
+  margin-top: 60px;
+  margin-right: 60px;
+  margin-bottom: 60px;
+}
+
+#landing-header-content #div1 button {
+  background-color: rgb(255, 255, 255, 0);
+  border: 0ch;
+  height: max-content;
+}
+#landing-header-content #div1 img {
+  background-color: rgb(255, 250, 250, 0);
+  height: 250px;
+  width: 100%;
+}
+
+@media (max-width: 568px) {
+  #landing-header-content #div1 {
+    padding: 0px;
+    width: 100%;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    margin: 10px;
+  }
+  #landing-header-content {
+    flex-direction: column;
+    align-items: center;
+  }
+}
+
+#steps-section #steps-section-content {
+  color: white;
+  width: 100%;
+}
+
+#steps-section #steps-section-content  img {
+  height: 400px;
+  width: auto;
+}
+
+#steps-section #steps-section-content > div {
+  text-align: center;
+  margin: 5px;
+  background-color: rgb(130, 130, 130,0.5);
+  border-radius: 10px;
+  border-width: 0.5px;
+  border-color: rgb(255, 255, 255);
+  width: 100%;
+}
+
+@media (max-width: 568px) {
+  #steps-section #steps-section-content  div {
+    padding: 0px;
+    width: 100%;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    margin: 10px;
+  }
+}

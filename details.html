@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css?family=Audiowide"
+    />
+    <link rel="stylesheet" href="style.css" />
+    <!-- CSS only -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3"
+      crossorigin="anonymous"
+    />
+    <!-- JavaScript Bundle with Popper -->
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
+      crossorigin="anonymous"
+    ></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+    <style>
+      body {
+        font-family: "Audiowide", sans-serif;
+        background-color: #000000;
+      }
+    </style>
+
+    <!-- <script src="https://code.jquery.com/jquery-1.10.2.js"></script> -->
+  </head>
+  <body>
+    <!--Navigation bar-->
+    <nav
+      style="color: rgb(0, 0, 0)"
+      class="navbar navbar-expand-lg navbar-dark"
+    >
+      <div class="container-fluid">
+        <a
+          href="index.html"
+          style="color: rgb(103, 220, 255)"
+          class="navbar-brand"
+          >Nithaparan's Space</a
+        >
+        <button
+          type="button"
+          class="navbar-toggler"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarCollapse"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarCollapse">
+          <div class="navbar-nav">
+            <a class="nav-item nav-link" href="index.html">Home </a>
+            <a class="nav-item nav-link" href="aboutme.html">About me</a>
+            <a class="nav-item nav-link active" href="projects.html"
+              >Projects</a
+            >
+            <a class="nav-item nav-link" href="contactme.html">Contact me</a>
+            <a class="nav-item nav-link" href="landingpage.html"
+              >Pitch Venture</a
+            >
+          </div>
+        </div>
+      </div>
+    </nav>
+
+    <section id="project-summary" class="project-summary">
+      <div>
+        <div style="padding: 100px">
+          <h1 id="project-title"></h1>
+          <p id="project-description"></p>
+          <button type="button" id="appstore-link">
+            <img
+              src="images/Download_on_the_App_Store_Badge_US-UK_RGB_blk_092917.svg"
+            />
+          </button>
+          <button type="button" id="googleplay-link">
+            <img src="images/android.png" />
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <section id="screenshots" class="scrollmenu">
+      <h1>Screenshots</h1>
+    </section>
+    <section id="role">
+      <h1>My Role</h1>
+      <p id="role_p"></p>
+    </section>
+    <section id="responsibilities">
+      <h1>Responsibilities</h1>
+      <ol id="responsibilities_ol"></ol>
+    </section>
+    <section id="documentation">
+      <h1>Documentation</h1>
+    </section>
+    <section id="design-scheme">
+      <h1>Design scheme</h1>
+      <div class="color">
+        <h3>Palette</h3>
+        <img id="pallete-image" />
+      </div>
+      <div class="fonts">
+        <h3>Fonts</h3>
+        <p>sdsd</p>
+      </div>
+    </section>
+    <div id="footer-placeholder" class="footer"></div>
+    <script>
+      function asdasd() {
+        const queryString = window.location.search;
+        const urlParams = new URLSearchParams(queryString);
+        const projectName = urlParams.get("project");
+        $.getJSON("projects.json", function (json) {
+          const project = json.find((element) => {
+            if (element.name === projectName) {
+              return true;
+            }
+          });
+          setUpPage(project);
+        });
+      }
+
+      function setUpPage(project) {
+        console.log(project);
+        //setup summary section
+        var projectSummarySection = document.getElementById("project-summary");
+        var projecTtitle = document.getElementById("project-title");
+        var projectDescription = document.getElementById("project-description");
+        var role = document.getElementById("role_p");
+        var responsibilitiesList = document.getElementById(
+          "responsibilities_ol"
+        );
+        var appstoreButton = document.getElementById("appstore-link");
+        var googleplayButton = document.getElementById("googleplay-link");
+        var palatteImage = document.getElementById("pallete-image");
+        projectSummarySection.style.backgroundImage = `url(${project.image})`;
+        projectSummarySection.style.position = "top left";
+        projecTtitle.innerHTML = project.name;
+        projectDescription.innerHTML = project.description;
+        role.innerHTML = project.role;
+
+        appstoreButton.addEventListener("click", function () {
+          if (project.appstoreLink == null) {
+            $("#myModal").modal();
+          } else {
+            window.open(project.appstoreLink, "_blank");
+          }
+        });
+        googleplayButton.addEventListener("click", function () {
+          if (project.googleplayLink == null) {
+            $("#myModal").modal();
+          } else {
+            window.open(project.googleplayLink, "_blank");
+          }
+        });
+
+        //setup screenshot section
+        var projectScreenshotSection = document.getElementById("screenshots");
+        project.screenShots.forEach((element) => {
+          var img = document.createElement("img");
+          img.src = element;
+          img.className = "screenshot";
+          projectScreenshotSection.appendChild(img);
+        });
+
+        //setup responsibilities section
+        project.responsibilities.forEach((element) => {
+          var li = document.createElement("li");
+          li.innerHTML = element;
+          responsibilitiesList.appendChild(li);
+        });
+
+        //setup design Scheme
+        palatteImage.src = project.design_scheme.color;
+      }
+
+      $(function () {
+        $("#nav-placeholder").load("navbar.html");
+        $("#footer-placeholder").load("footer2.html");
+      });
+
+      asdasd();
+    </script>
+    <!-- Modal -->
+    <div
+      class="modal fade"
+      id="myModal"
+      tabindex="-1"
+      role="dialog"
+      aria-labelledby="exampleModalLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">Link not found</h5>
+            <button
+              type="button"
+              class="close"
+              data-dismiss="modal"
+              aria-label="Close"
+            >
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <h4>This may due to</h4>
+            <ol id="responsibilities_ol"></ol>
+            <li>App has been removed from store</li>
+            <li>App is being developed</li>
+            <li>Server errors</li>
+          </div>
+          <div class="modal-footer">
+            <button
+              type="button"
+              class="btn btn-secondary"
+              data-dismiss="modal"
+            >
+              Close
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
