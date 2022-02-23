@@ -2,6 +2,7 @@
 <html>
   <head>
     <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Personal Portfolio Website</title>
     <link
       rel="stylesheet"
       href="https://fonts.googleapis.com/css?family=Audiowide"
@@ -58,11 +59,11 @@
         </button>
         <div class="collapse navbar-collapse" id="navbarCollapse">
           <div class="navbar-nav">
-            <a class="nav-item nav-link" href="home.html">Home </a>
+            <a class="nav-item nav-link active" href="home.html">Home </a>
             <a class="nav-item nav-link" href="aboutme.html">About me</a>
             <a class="nav-item nav-link" href="projects.html">Projects</a>
             <a class="nav-item nav-link" href="contactme.html">Contact me</a>
-            <a class="nav-item nav-link active" href="index.html"
+            <a class="nav-item nav-link" href="index.html"
               >Pitch Venture</a
             >
           </div>
@@ -70,56 +71,21 @@
       </div>
     </nav>
 
-    <section id="landing-header">
-      <div id="landing-header-content" style="display: flex">
-        <div id="div2">
-          <img src="images/landingpage/main.png" />
-        </div>
-
-        <div id="div1">
-          <div>
-            <h1>A</h1>
-            <h1>Centerlised platform</h1>
-            <h1>To connect</h1>
-            <h1>Franchises & Store Owners</h1>
-            <button type="button" id="appstore-link">
-              <img
-                src="images/Download_on_the_App_Store_Badge_US-UK_RGB_blk_092917.svg"
-              />
-            </button>
-          </div>
-        </div>
+    <section id="home">
+      <div id="home-content">
+        <h4>Hello!</h4>
+        <h1>I am Nithaparan,</h1>
+        <h6>I am iOS Developer.</h6>
+        <button
+          onclick="document.location='contactme.html'"
+          type="button"
+          class="btn btn-outline-danger"
+        >
+          Contact me
+        </button>
       </div>
     </section>
 
-    <section id="steps-section">
-      <h4>Steps to get in</h4>
-      <div id="steps-section-content" class="row">
-        <div class="col-sm flex-coloumn">
-          <h3>Sign Up</h3>
-          <div>Sign up in to the system with minimum details</div>
-          <img src="images/landingpage/main.png" />
-        </div>
-        <div class="col-sm flex-coloumn">
-          <h3>Search</h3>
-          <div>Search for companies with whom you want to do business.</div>
-          <img src="images/landingpage/main.png" />
-        </div>
-        <div class="col-sm flex-coloumn">
-          <h3>Get Partnered</h3>
-          <div>Sent request to the companies you like and get partnered!</div>
-          <img src="images/landingpage/main.png" />
-        </div>
-      </div>
-    </section>
-
-    <section id="feature-section">
-      <h1>More features</h1>
-      <ol id="features">
-        <li>Notifications</li>
-        <li>Promote account to reach more people</li>
-      </ol>
-    </section>
     <!-- Footer -->
     <footer class="text-center text-white" style="background-color: #1d1d1d">
       <!-- Grid container -->
@@ -167,5 +133,15 @@
       </div>
       <!-- Copyright -->
     </footer>
+    <script>
+      function setUpPage(project) {
+        console.log(project);
+        //setup summary section
+        var homeSection = document.getElementById("home");
+        homeSection.style.backgroundImage = `url(images/about-bg2.png)`;
+      }
+
+      setUpPage();
+    </script>
   </body>
 </html>

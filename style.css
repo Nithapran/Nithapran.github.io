@@ -371,6 +371,18 @@ p {
   width: 100%;
 }
 
+#steps-section h4 {
+  color: rgb(255, 0, 0);
+  text-align: center;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+#feature-section{
+  color: white;
+  
+}
+
 @media (max-width: 568px) {
   #steps-section #steps-section-content  div {
     padding: 0px;
@@ -379,5 +391,10 @@ p {
     align-items: center;
     text-align: center;
     margin: 10px;
+  }
+
+  #feature-section {
+    align-items: center;
+  text-align: center;
   }
 }

@@ -20,6 +20,10 @@
       integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
       crossorigin="anonymous"
     ></script>
+    <script
+      src="https://kit.fontawesome.com/13ccb33514.js"
+      crossorigin="anonymous"
+    ></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
     <style>
@@ -54,13 +58,13 @@
         </button>
         <div class="collapse navbar-collapse" id="navbarCollapse">
           <div class="navbar-nav">
-            <a class="nav-item nav-link" href="index.html">Home </a>
+            <a class="nav-item nav-link" href="home.html">Home </a>
             <a class="nav-item nav-link" href="aboutme.html">About me</a>
             <a class="nav-item nav-link active" href="projects.html"
               >Projects</a
             >
             <a class="nav-item nav-link" href="contactme.html">Contact me</a>
-            <a class="nav-item nav-link" href="landingpage.html"
+            <a class="nav-item nav-link" href="index.html"
               >Pitch Venture</a
             >
           </div>
@@ -69,7 +73,53 @@
     </nav>
 
     <div id="main-content" class="row"></div>
-    <div id="footer-placeholder" class="footer"></div>
+    <!-- Footer -->
+    <footer class="text-center text-white" style="background-color: #1d1d1d">
+      <!-- Grid container -->
+      <div class="container pt-4">
+        <!-- Section: Social media -->
+        <section class="mb-4">
+          <!-- Github -->
+          <a
+            class="btn btn-link btn-floating btn-lg text-light m-1"
+            href="https://github.com/Nithapran"
+            role="button"
+            data-mdb-ripple-color="dark"
+            ><i class="fab fa-github"></i
+          ></a>
+
+          <!-- Linkedin -->
+          <a
+            class="btn btn-link btn-floating btn-lg text-light m-1"
+            href="https://www.linkedin.com/in/nithaparanfrancis/"
+            role="button"
+            data-mdb-ripple-color="light"
+            ><i class="fab fa-linkedin"></i
+          ></a>
+
+          <!-- Twitter -->
+          <a
+            class="btn btn-link btn-floating btn-lg text-light m-1"
+            href="https://twitter.com/fnithaparan"
+            role="button"
+            data-mdb-ripple-color="dark"
+            ><i class="fab fa-twitter"></i
+          ></a>
+        </section>
+        <!-- Section: Social media -->
+      </div>
+      <!-- Grid container -->
+
+      <!-- Copyright -->
+      <div
+        class="text-center text-light p-3"
+        style="background-color: rgba(106, 106, 106, 0.2)"
+      >
+        © 2020 Copyright:
+        <a class="text-light" href="https://nithapran.github.io">@Nithaparan</a>
+      </div>
+      <!-- Copyright -->
+    </footer>
     <script>
       let mainContent = document.getElementById("main-content");
       let row = document.createElement("div");
@@ -130,11 +180,6 @@
         localStorage.setItem("selectedProject", JSON.stringify(project));
         location.href = "details.html?project=" + project.name;
       }
-
-      $(function () {
-        $("#nav-placeholder").load("navbar.html");
-        $("#footer-placeholder").load("footer2.html");
-      });
       asdsd();
     </script>
   </body>
