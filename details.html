@@ -14,12 +14,7 @@
       integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3"
       crossorigin="anonymous"
     />
-    <!-- JavaScript Bundle with Popper -->
-    <script
-      src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
-      integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
-      crossorigin="anonymous"
-    ></script>
+    
     <script
       src="https://kit.fontawesome.com/13ccb33514.js"
       crossorigin="anonymous"
@@ -111,7 +106,7 @@
       </div>
       <div class="fonts">
         <h3>Fonts</h3>
-        <p>sdsd</p>
+        <p id="project-font">sdsd</p>
       </div>
     </section>
     
@@ -190,7 +185,8 @@
         var appstoreButton = document.getElementById("appstore-link");
         var googleplayButton = document.getElementById("googleplay-link");
         var palatteImage = document.getElementById("pallete-image");
-        projectSummarySection.style.backgroundImage = `url(${project.image})`;
+        var projectFont = document.getElementById("project-font");
+        projectSummarySection.style.backgroundImage = `url(images/detail-page-bg.jpg)`;
         projectSummarySection.style.position = "top left";
         projecTtitle.innerHTML = project.name;
         projectDescription.innerHTML = project.description;
@@ -227,8 +223,26 @@
           responsibilitiesList.appendChild(li);
         });
 
+        //setup doc section
+        var projectScreenshotSection = document.getElementById("documentation");
+        if (project.documentation.length == 0) {
+          var label = document.createElement("h6");
+          label.style = "color:red; margin-left:14px";
+          label.innerHTML = "Not available";
+          projectScreenshotSection.appendChild(label);
+        } else {
+          project.documentation.forEach((element) => {
+          var img = document.createElement("img");
+          img.src = element;
+          img.className = "screenshot";
+          projectScreenshotSection.appendChild(img);
+        });
+        }
+       
+
         //setup design Scheme
         palatteImage.src = project.design_scheme.color;
+        projectFont.innerHTML = project.design_scheme.font;
       }
 
      

@@ -71,116 +71,149 @@
         </div>
       </div>
     </nav>
-
-    <div id="main-content" class="row"></div>
-    <!-- Footer -->
+    <section id="main-content" class="row"></section>
     <footer class="text-center text-white" style="background-color: #1d1d1d">
-      <!-- Grid container -->
-      <div class="container pt-4">
-        <!-- Section: Social media -->
-        <section class="mb-4">
-          <!-- Github -->
-          <a
-            class="btn btn-link btn-floating btn-lg text-light m-1"
-            href="https://github.com/Nithapran"
-            role="button"
-            data-mdb-ripple-color="dark"
-            ><i class="fab fa-github"></i
-          ></a>
-
-          <!-- Linkedin -->
-          <a
-            class="btn btn-link btn-floating btn-lg text-light m-1"
-            href="https://www.linkedin.com/in/nithaparanfrancis/"
-            role="button"
-            data-mdb-ripple-color="light"
-            ><i class="fab fa-linkedin"></i
-          ></a>
-
-          <!-- Twitter -->
-          <a
-            class="btn btn-link btn-floating btn-lg text-light m-1"
-            href="https://twitter.com/fnithaparan"
-            role="button"
-            data-mdb-ripple-color="dark"
-            ><i class="fab fa-twitter"></i
-          ></a>
-        </section>
-        <!-- Section: Social media -->
-      </div>
-      <!-- Grid container -->
-
-      <!-- Copyright -->
-      <div
-        class="text-center text-light p-3"
-        style="background-color: rgba(106, 106, 106, 0.2)"
-      >
-        © 2020 Copyright:
-        <a class="text-light" href="https://nithapran.github.io">@Nithaparan</a>
-      </div>
-      <!-- Copyright -->
-    </footer>
-    <script>
-      let mainContent = document.getElementById("main-content");
-      let row = document.createElement("div");
-      row.className = "row";
-      function asdsd() {
-        $.getJSON("projects.json", function (json) {
-          json.forEach((element) => {
-            createCard(element);
+        <!-- Grid container -->
+        <div class="container pt-4">
+          <!-- Section: Social media -->
+          <section class="mb-4">
+            <!-- Github -->
+            <a
+              class="btn btn-link btn-floating btn-lg text-light m-1"
+              href="https://github.com/Nithapran"
+              role="button"
+              data-mdb-ripple-color="dark"
+              ><i class="fab fa-github"></i
+            ></a>
+  
+            <!-- Linkedin -->
+            <a
+              class="btn btn-link btn-floating btn-lg text-light m-1"
+              href="https://www.linkedin.com/in/nithaparanfrancis/"
+              role="button"
+              data-mdb-ripple-color="light"
+              ><i class="fab fa-linkedin"></i
+            ></a>
+  
+            <!-- Twitter -->
+            <a
+              class="btn btn-link btn-floating btn-lg text-light m-1"
+              href="https://twitter.com/fnithaparan"
+              role="button"
+              data-mdb-ripple-color="dark"
+              ><i class="fab fa-twitter"></i
+            ></a>
+          </section>
+          <!-- Section: Social media -->
+        </div>
+        <!-- Grid container -->
+  
+        <!-- Copyright -->
+        <div
+          class="text-center text-light p-3"
+          style="background-color: rgba(106, 106, 106, 0.2)"
+        >
+          © 2020 Copyright:
+          <a class="text-light" href="https://nithapran.github.io">@Nithaparan</a>
+        </div>
+        <!-- Copyright -->
+      </footer>
+      <script>
+        let mainSection = document.getElementById("main-content");
+        
+        
+        function asdsd() {
+          $.getJSON("projects.json", function (json) {
+            json.forEach((element) => {
+              createCard(element);
+            });
           });
+        }
+  
+        function createCard(project) {
+            let projectDiv = document.createElement("div");
+            projectDiv.setAttribute("id", "project-div");
+            projectDiv.className = "col-sm flex-coloumn"
+            projectDiv.addEventListener('click', function (event) {
+            buttonClicked(project)
         });
-      }
 
-      function createCard(project) {
-        let button = document.createElement("button");
-        button.addEventListener("click", function () {
-          buttonClicked(project);
-        });
-        let column = document.createElement("div");
-        column.className = "col-sm-6";
+           
+            
 
-        let card = document.createElement("div");
-        card.setAttribute("style", "color:white;background-color:black");
-        card.className = "card";
+            let title = document.createElement("h3");
+            title.setAttribute("id", "project-title");
+            let description = document.createElement("p");
+            description.setAttribute("id", "project-description");
+            let projectImage = document.createElement("img");
+            projectImage.setAttribute("id", "project-image");
 
-        let cardBody = document.createElement("div");
-        card.className = "coll card-body";
+            var titleText = document.createTextNode(project.name);
+            title.appendChild(titleText);
 
-        let title = document.createElement("h1");
-        title.className = "card-title";
-        var titleText = document.createTextNode(project.name);
-        title.appendChild(titleText);
-        cardBody.appendChild(title);
+            var descriptionText = document.createTextNode(project.description_summary);
+            description.appendChild(descriptionText);
 
-        var img = document.createElement("img");
-        img.src = project.image;
-        img.width = 80;
-        img.height = 100;
-        img.className = "card-img-top";
-        //cardBody.appendChild(img);
+            projectImage.src = project.image;
 
-        let description = document.createElement("p");
-        description.className = "card-text";
-        var descriptionText = document.createTextNode(project.description);
-        description.appendChild(descriptionText);
-        cardBody.appendChild(description);
+            projectDiv.appendChild(title);
+            projectDiv.appendChild(projectImage);
+            projectDiv.appendChild(description);
 
-        card.appendChild(cardBody);
+            
 
-        button.appendChild(card);
-        column.appendChild(button);
-        mainContent.appendChild(column);
-      }
-      //mainContent.appendChild(row);
+            mainSection.appendChild(projectDiv);
 
-      function buttonClicked(project) {
-        // localStorage.setItem("lastname", "Smith");
-        // console.log(localStorage.getItem("lastname"));
-        localStorage.setItem("selectedProject", JSON.stringify(project));
-        location.href = "details.html?project=" + project.name;
-      }
-      asdsd();
-    </script>
-  </body>
-</html>
+
+        //   let button = document.createElement("button");
+        //   button.addEventListener("click", function () {
+        //     buttonClicked(project);
+        //   });
+        //   let column = document.createElement("div");
+        //   column.className = "col-sm-6";
+  
+        //   let card = document.createElement("div");
+        //   card.setAttribute("style", "color:white;background-color:black");
+        //   card.className = "card";
+  
+        //   let cardBody = document.createElement("div");
+        //   card.className = "coll card-body";
+  
+        //   let title = document.createElement("h1");
+        //   title.className = "card-title";
+        //   var titleText = document.createTextNode(project.name);
+        //   title.appendChild(titleText);
+        //   cardBody.appendChild(title);
+  
+        //   var img = document.createElement("img");
+        //   img.src = project.image;
+        //   img.width = 80;
+        //   img.height = 100;
+        //   img.className = "card-img-top";
+        //   //cardBody.appendChild(img);
+  
+        //   let description = document.createElement("p");
+        //   description.className = "card-text";
+        //   var descriptionText = document.createTextNode(project.description);
+        //   description.appendChild(descriptionText);
+        //   cardBody.appendChild(description);
+  
+        //   card.appendChild(cardBody);
+  
+        //   button.appendChild(card);
+        //   column.appendChild(button);
+        //   mainContent.appendChild(column);
+        }
+        //mainContent.appendChild(row);
+  
+        function buttonClicked(project) {
+          // localStorage.setItem("lastname", "Smith");
+          // console.log(localStorage.getItem("lastname"));
+          localStorage.setItem("selectedProject", JSON.stringify(project));
+          location.href = "details.html?project=" + project.name;
+        }
+        asdsd();
+      </script>
+    </body>
+  </html>
+  

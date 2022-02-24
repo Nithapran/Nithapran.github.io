@@ -84,6 +84,11 @@ p {
   color: white;
 }
 
+#project-summary p {
+  background-color: rgb(0, 0, 0,0.3);
+  border-radius: 15px;
+}
+
 #project-summary img {
   width: 200px;
   height: 64px;
@@ -124,12 +129,14 @@ p {
   background-color: black;
   width: 100%;
   height: 100px;
+  margin-bottom: 20px;
 }
 
 #role h1 {
   color: rgb(255, 255, 255);
   padding: 14px;
 }
+
 
 #responsibilities {
   background-color: black;
@@ -159,6 +166,13 @@ ol {
   padding: 14px;
 }
 
+#documentation img {
+  border-radius: 20px;
+  margin: 10px;
+  width: 400px;
+  height: auto;
+}
+
 #design-scheme {
   background-color: black;
   width: 100%;
@@ -168,6 +182,11 @@ ol {
 #design-scheme h1 {
   color: rgb(255, 255, 255);
   padding: 14px;
+}
+
+#design-scheme p {
+  color: rgb(255, 255, 255);
+  margin-left: 14px;
 }
 
 #design-scheme h3 {
@@ -235,13 +254,30 @@ p {
   width: 15%;
 }
 
+@media (max-width: 568px) {
+  
+
+  #work-history > h3 {
+    width: 100%;
+    align-items: center;
+  text-align: center;
+  }
+
+  #work-history  #work-edu-history-container {
+    width: 80%;
+    align-items: center;
+    margin-left: 10%; 
+    margin-right: 10%;
+  }
+}
+
 #work-edu-history-container {
   margin-left: 10px;
   margin-right: 10px;
   margin-bottom: 10px;
   background-color: #3f3f3f;
   border-radius: 15px;
-  width: 80%;
+  width: auto;
 }
 
 #work-edu-history-job-title {
@@ -394,6 +430,41 @@ p {
   }
 
   #feature-section {
+    align-items: center;
+  text-align: center;
+  }
+}
+
+
+
+#project-div{
+  color: white;
+  background-color: #3f3f3f;
+  border-radius: 15px;
+  margin: 10px;
+  text-align: center;
+}
+
+#project-image {
+  border-radius: 15px;
+}
+
+#project-title {
+  margin-top: 10px;
+}
+
+#contact-form-container{
+  margin: 0;
+  position: absolute;
+  top: 40%;
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
+}
+
+@media (max-width: 568px) {
+  
+  #contact-form-container {
+    width: 100%;
     align-items: center;
   text-align: center;
   }

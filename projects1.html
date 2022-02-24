@@ -14,7 +14,12 @@
       integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3"
       crossorigin="anonymous"
     />
-   
+    <!-- JavaScript Bundle with Popper -->
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
+      crossorigin="anonymous"
+    ></script>
     <script
       src="https://kit.fontawesome.com/13ccb33514.js"
       crossorigin="anonymous"
@@ -55,9 +60,11 @@
           <div class="navbar-nav">
             <a class="nav-item nav-link" href="home.html">Home </a>
             <a class="nav-item nav-link" href="aboutme.html">About me</a>
-            <a class="nav-item nav-link" href="projects.html">Projects</a>
+            <a class="nav-item nav-link active" href="projects.html"
+              >Projects</a
+            >
             <a class="nav-item nav-link" href="contactme.html">Contact me</a>
-            <a class="nav-item nav-link active" href="index.html"
+            <a class="nav-item nav-link" href="index.html"
               >Pitch Venture</a
             >
           </div>
@@ -65,56 +72,7 @@
       </div>
     </nav>
 
-    <section id="landing-header">
-      <div id="landing-header-content" style="display: flex">
-        <div id="div2">
-          <img src="images/landingpage/main.png" />
-        </div>
-
-        <div id="div1">
-          <div>
-            <h1>A</h1>
-            <h1>Centerlised platform</h1>
-            <h1>To connect</h1>
-            <h1>Franchises & Store Owners</h1>
-            <button type="button" id="appstore-link">
-              <img
-                src="images/Download_on_the_App_Store_Badge_US-UK_RGB_blk_092917.svg"
-              />
-            </button>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section id="steps-section">
-      <h4>Steps to get in</h4>
-      <div id="steps-section-content" class="row">
-        <div class="col-sm flex-coloumn">
-          <h3>Sign Up</h3>
-          <div>Sign up in to the system with minimum details</div>
-          <img src="images/landingpage/2.png" />
-        </div>
-        <div class="col-sm flex-coloumn">
-          <h3>Search</h3>
-          <div>Search for companies with whom you want to do business.</div>
-          <img src="images/landingpage/3.png" />
-        </div>
-        <div class="col-sm flex-coloumn">
-          <h3>Get Partnered</h3>
-          <div>Sent request to the companies you like and get partnered!</div>
-          <img src="images/landingpage/4.png" />
-        </div>
-      </div>
-    </section>
-
-    <section id="feature-section">
-      <h1>More features</h1>
-      <ol id="features">
-        <li>Notifications</li>
-        <li>Promote account to reach more people</li>
-      </ol>
-    </section>
+    <div id="main-content" class="row"></div>
     <!-- Footer -->
     <footer class="text-center text-white" style="background-color: #1d1d1d">
       <!-- Grid container -->
@@ -163,56 +121,66 @@
       <!-- Copyright -->
     </footer>
     <script>
-      function setupPage () {
-        var appstoreButton = document.getElementById("appstore-link");
-      appstoreButton.addEventListener("click", function () {
-        $("#myModal").modal();
+      let mainContent = document.getElementById("main-content");
+      let row = document.createElement("div");
+      row.className = "row";
+      function asdsd() {
+        $.getJSON("projects.json", function (json) {
+          json.forEach((element) => {
+            createCard(element);
+          });
         });
       }
-      setupPage();
+
+      function createCard(project) {
+        let button = document.createElement("button");
+        button.addEventListener("click", function () {
+          buttonClicked(project);
+        });
+        let column = document.createElement("div");
+        column.className = "col-sm-6";
+
+        let card = document.createElement("div");
+        card.setAttribute("style", "color:white;background-color:black");
+        card.className = "card";
+
+        let cardBody = document.createElement("div");
+        card.className = "coll card-body";
+
+        let title = document.createElement("h1");
+        title.className = "card-title";
+        var titleText = document.createTextNode(project.name);
+        title.appendChild(titleText);
+        cardBody.appendChild(title);
+
+        var img = document.createElement("img");
+        img.src = project.image;
+        img.width = 80;
+        img.height = 100;
+        img.className = "card-img-top";
+        //cardBody.appendChild(img);
+
+        let description = document.createElement("p");
+        description.className = "card-text";
+        var descriptionText = document.createTextNode(project.description);
+        description.appendChild(descriptionText);
+        cardBody.appendChild(description);
+
+        card.appendChild(cardBody);
+
+        button.appendChild(card);
+        column.appendChild(button);
+        mainContent.appendChild(column);
+      }
+      //mainContent.appendChild(row);
+
+      function buttonClicked(project) {
+        // localStorage.setItem("lastname", "Smith");
+        // console.log(localStorage.getItem("lastname"));
+        localStorage.setItem("selectedProject", JSON.stringify(project));
+        location.href = "details.html?project=" + project.name;
+      }
+      asdsd();
     </script>
-    <!-- Modal -->
-<div
-class="modal fade"
-id="myModal"
-tabindex="-1"
-role="dialog"
-aria-labelledby="exampleModalLabel"
-aria-hidden="true"
->
-<div class="modal-dialog" role="document">
-  <div class="modal-content">
-    <div class="modal-header">
-      <h5 class="modal-title" id="exampleModalLabel">Link not found</h5>
-      <button
-        type="button"
-        class="close"
-        data-dismiss="modal"
-        aria-label="Close"
-      >
-        <span aria-hidden="true">&times;</span>
-      </button>
-    </div>
-    <div class="modal-body">
-      <h4>This may due to</h4>
-      <ol id="responsibilities_ol"></ol>
-      <li>App has been removed from store</li>
-      <li>App is being developed</li>
-      <li>Server errors</li>
-    </div>
-    <div class="modal-footer">
-      <button
-        type="button"
-        class="btn btn-secondary"
-        data-dismiss="modal"
-      >
-        Close
-      </button>
-    </div>
-  </div>
-</div>
-</div>
   </body>
 </html>
-
-

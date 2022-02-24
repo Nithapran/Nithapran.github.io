@@ -1,7 +1,7 @@
 [
   {
     "name": "CabOnline",
-    "image": "images/detail-page-bg.jpg",
+    "image": "images/cabonline.jpg",
     "description": "This is a taxi system mainly operated in Sweden, Norway, and Finland. In Taxi Cabonline people can book a trip with some interesting features like adding car-options, pre-booking, add via-points, and more. Moreover, it has common features like rating and location tracking.",
     "screenShots": [
       "images/cabonline-sc/1.jpg",
@@ -26,15 +26,149 @@
     ],
     "appstoreLink": "https://apps.apple.com/ca/app/taxi-cabonline/id495111856",
     "googleplayLink": "https://play.google.com/store/apps/details?id=com.cabonline.cabonline&hl=en_CA&gl=US",
-    "design_schemme": {
+    "design_scheme": {
       "color": "images/color-palette/cabonline.png",
-      "font": "Tanseek Modern Arabic Medium"
+      "font": "Helvetica Neue"
     },
-    "documentation": null
+    "documentation": [],
+    "description_summary": "This is a taxi system system"
   },
   {
+    "name": "Harvest",
+    "image": "images/harvest.png",
+    "description": "This is a simple informative app where user can get to know about informations about all fruits and vegetables.",
+    "screenShots": [
+      "images/harvest-sc/1.png",
+      "images/harvest-sc/2.png",
+      "images/harvest-sc/3.png",
+      "images/harvest-sc/4.png",
+      "images/harvest-sc/5.png",
+      "images/harvest-sc/6.png"
+    ],
+    "role": "Team lead",
+    "responsibilities": [
+      "Designing and building mobile applications for Apple’s iOS platform.",
+      "Collaborating with the design team to define app features",
+      "Ensuring quality and performance of the application to specifications.",
+      "Identifying potential problems and resolving application bottlenecks.",
+      "Fixing application bugs before the final release.",
+      "Publishing application on App Store.",
+      "Maintaining the code and atomization of the application.",
+      "Designing and implementing application updates"
+    ],
+    "appstoreLink": null,
+    "googleplayLink": null,
+    "design_scheme": {
+      "color": "images/color-palette/harvest.png",
+      "font": "Monda"
+    },
+    "documentation": [
+      "images/doc/harvest/1.png",
+      "images/doc/harvest/2.png"
+    ],
+    "description_summary": "An app with information about fruits and vegetables."
+  },
+  {
+    "name": "Pitch Venture",
+    "image": "images/pitchventure.jpeg",
+    "description": "PitchVenture is an iOS application that connects commercial store owners with franchise or brand owners who want to establish a business by purchasing a franchise. Many brands and companies have established franchises in various regions of the world in recent years to expand their business, but there is a lack of a reliable platform where shop owners can communicate with franchise owners ",
+    "screenShots": [
+      "images/pitchventure-sc/1.png",
+      "images/pitchventure-sc/2.png",
+      "images/pitchventure-sc/3.png",
+      "images/pitchventure-sc/4.png",
+      "images/pitchventure-sc/5.png"
+    ],
+    "role": "Developer, Sprint leader, Designer",
+    "responsibilities": [
+      "Develop back-end for the project",
+      "Design UI",
+      "Collaborating with the design team to define app features"
+    ],
+    "appstoreLink": null,
+    "googleplayLink": null,
+    "design_scheme": {
+      "color": "images/color-palette/pitchventure.png",
+      "font": "Helvetica Neue"
+    },
+    "documentation": [
+      "images/doc/pitchventure/1.jpeg",
+      "images/doc/pitchventure/2.png",
+      "images/doc/pitchventure/3.jpeg",
+      "images/doc/pitchventure/4.png",
+      "images/doc/pitchventure/5.png",
+      "images/doc/pitchventure/6.png"
+    ],
+    "description_summary": "PitchVenture is an iOS application that connects commercial store owners with franchise"
+  },
+  {
+    "name": "Chef",
+    "image": "images/chef.png",
+    "description": "This is a system when chefs and regular users can create a profile.Chef can put their hourly rate and theie specialization in their profile. Then users can hire chef for hourly basis.",
+    "screenShots": [
+      "images/chef-sc/1.png",
+      "images/chef-sc/2.png",
+      "images/chef-sc/3.png",
+      "images/chef-sc/4.png",
+      "images/chef-sc/5.png",
+      "images/chef-sc/6.png"
+    ],
+    "role": "Developer",
+    "responsibilities": [
+      "Designing and building mobile applications for Apple’s iOS platform.",
+      "Collaborating with the design team to define app features",
+      "Ensuring quality and performance of the application to specifications.",
+      "Identifying potential problems and resolving application bottlenecks.",
+      "Fixing application bugs before the final release.",
+      "Publishing application on App Store.",
+      "Maintaining the code and atomization of the application.",
+      "Designing and implementing application updates"
+    ],
+    "appstoreLink": null,
+    "googleplayLink": null,
+    "design_scheme": {
+      "color": "images/color-palette/chef.png",
+      "font": "Helvetica Neue"
+    },
+    "documentation": [
+      "images/doc/chef/1.png"
+    ],
+    "description_summary": "An app that open doors to earn for those who can cook well."
+  },
+  {
+    "name": "Jump Starter",
+    "image": "images/jumpstarter.png",
+    "description": "This is an iOS app which help people stuck at road due to car battery down. In the app, a user can send a help request with the address and coordinate and a phone number. The request will be added to a pool of help requests. Then whoever wants to help can see all the requests nearest to them in the app. They can accept a help request and drive to the specific location and do the needful.",
+    "screenShots": [
+      "images/jumpstarter-sc/1.png",
+      "images/jumpstarter-sc/2.png",
+      "images/jumpstarter-sc/3.png",
+      "images/jumpstarter-sc/4.png"
+    ],
+    "role": "Developer",
+    "responsibilities": [
+      "Designing and building mobile applications for Apple’s iOS platform.",
+      "Collaborating with the design team to define app features",
+      "Ensuring quality and performance of the application to specifications.",
+      "Identifying potential problems and resolving application bottlenecks.",
+      "Fixing application bugs before the final release.",
+      "Publishing application on App Store.",
+      "Maintaining the code and atomization of the application.",
+      "Designing and implementing application updates"
+    ],
+    "appstoreLink": null,
+    "googleplayLink": null,
+    "design_scheme": {
+      "color": "images/color-palette/jumpstarter.png",
+      "font": "Helvetica Neue"
+    },
+    "documentation": [
+      "images/doc/jumpstarter/1.png"
+    ],
+    "description_summary": "An app that help people who stuck at road du to car battery down."
+  },{
     "name": "Fitopia",
-    "image": "images/detail-page-bg.jpg",
+    "image": "images/fitopia.png",
     "description": "This is a consumer facing iOS mobile application for a Health care business in London. The app facilitates the user to view and book the classes by date. Users can able to make the payments through the app. Additionally the app provides some facilities such as Google maps, push notifications etc.",
     "screenShots": [
       "images/fitopia-sc/1.jpeg",
@@ -58,8 +192,11 @@
     "googleplayLink": null,
     "design_scheme": {
       "color": "images/color-palette/fitopia.png",
-      "font": "Tanseek Modern Arabic Medium"
+      "font": "Monda"
     },
-    "documentation": null
+    "documentation": [
+    ],
+    "description_summary": "An iOS app through which user can able to book yoga classes."
   }
+  
 ]
